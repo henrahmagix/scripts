@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+
+FIND="$1"
+SOURCE=$2
+DEST=$3
+FILE=$4
+WIDTH=$5
+HEIGHT=$6
+
+foo () {
+  echo $1 | sed 's:^\.::'
+  return 0
+}
+
+#DEST=$FIND | sed 's:^\.::'
+DEST=foo "$FIND"
+
+echo $DEST
+exit 1
