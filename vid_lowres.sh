@@ -8,4 +8,4 @@ then
   exit 1
 fi
 
-handbrakebatch -x320 -y180 -r25 -m -i $1 -o "$2"
+handbrake-batch -x320 -y180 -r25 -m -i $1 -o "$2"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-script="/usr/local/scripts"
+script="$HENRY_CODEDIR/scripts"
 bin="/usr/local/bin"
 apps="$HOME/Apps"
 
