@@ -4,4 +4,6 @@
 # /usr/local/scripts. So linking inside itself in the original directory, obviously because
 # it is a symlink.
 [ ! -e /usr/local/scripts ] && ln -s $PWD /usr/local/scripts
-./makelinks.sh
+# Get the pwd of this script.
+DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+$DIR/makelinks.sh
