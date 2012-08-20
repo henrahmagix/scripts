@@ -1,0 +1,7 @@
+#!/bin/sh
+# Check if scripts symlink already exists. Running this when it does results in oddness.
+# "Teh oddness" is 'scripts' inside /usr/local/scripts pointing the original location of
+# /usr/local/scripts. So linking inside itself in the original directory, obviously because
+# it is a symlink.
+[ ! -e /usr/local/scripts ] && ln -s $PWD /usr/local/scripts
+./makelinks.sh
