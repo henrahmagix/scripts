@@ -13,11 +13,12 @@ fi
 # Get dir of image file.
 cd `dirname $1`
 DIR=`pwd`
-FILE=$DIR/$1
+FILE=`basename $1`
+IMGPATH=$DIR/$FILE
 
 [ ! -e $FILE ] && echo "$FILE does not exist" && exit 1
 
-echo "Change all desktop backgrounds to $1"
+echo "Change all desktop backgrounds to $PATH"
 
-defaults write com.apple.desktop Background "{default = {ImageFilePath="$FILE"; };}"; killall Dock;
+defaults write com.apple.desktop Background "{default = {ImageFilePath="$IMGPATH"; };}"; killall Dock;
 
