@@ -18,7 +18,7 @@ IMGPATH=$DIR/$FILE
 
 [ ! -e $FILE ] && echo "$FILE does not exist" && exit 1
 
-echo "Change all desktop backgrounds to $PATH"
+echo "Change all desktop backgrounds to $IMGPATH"
 
 defaults write com.apple.desktop Background "{default = {ImageFilePath="$IMGPATH"; };}"; killall Dock;
 
