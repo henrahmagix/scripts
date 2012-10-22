@@ -11,6 +11,7 @@ ln -s $script/change_all_desktops.sh $bin/changebackground
 ln -s $script/is_symlink.sh $bin/issymlink
 ln -s $script/git_single_branch.sh $bin/git_single_branch
 ln -s $script/git_delete_branches.sh $bin/git_delete_branches
+ln -s $script/ghi $bin/ghi
 ln -s $script/confirm.sh $bin/confirm.sh
 ln -s $apps/todo.sh $bin/
 ln -s $apps/HandBrakeCLI $bin/
