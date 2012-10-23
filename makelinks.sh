@@ -4,15 +4,15 @@ script="/usr/local/scripts"
 bin="/usr/local/bin"
 apps="$HOME/Apps"
 
-ln -s $script/debian_rename $bin/rename
-ln -s $script/handbrake_batch.sh $bin/handbrake-batch
-ln -s $script/number_of_files.sh $bin/numfiles
-ln -s $script/change_all_desktops.sh $bin/changebackground
-ln -s $script/is_symlink.sh $bin/issymlink
-ln -s $script/git_single_branch.sh $bin/git_single_branch
-ln -s $script/git_delete_branches.sh $bin/git_delete_branches
-ln -s $script/ghi $bin/ghi
-ln -s $script/confirm.sh $bin/confirm.sh
-ln -s $apps/todo.sh $bin/
-ln -s $apps/HandBrakeCLI $bin/
-ln -s $apps/mvim $bin/
+ln -sv $script/debian_rename $bin/rename
+ln -sv $script/handbrake_batch.sh $bin/handbrake-batch
+ln -sv $script/number_of_files.sh $bin/numfiles
+ln -sv $script/change_all_desktops.sh $bin/changebackground
+ln -sv $script/is_symlink.sh $bin/issymlink
+ln -sv $script/git_single_branch.sh $bin/git_single_branch
+ln -sv $script/git_delete_branches.sh $bin/git_delete_branches
+ln -sv $script/ghi $bin/ghi
+ln -sv $script/confirm.sh $bin/confirm.sh
+ln -sv $apps/todo.sh $bin/
+ln -sv $apps/HandBrakeCLI $bin/
+ln -sv $apps/mvim $bin/
