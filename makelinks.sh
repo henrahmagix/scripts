@@ -14,6 +14,7 @@ ln -sv $script/git_single_branch.sh	$bin/git_single_branch
 ln -sv $script/git_delete_branches.sh	$bin/git_delete_branches
 ln -sv $script/ghi			$bin/
 ln -sv $script/confirm.sh		$bin/
+ln -sv $script/file_regex.sh		$bin/
 ln -sv $apps/todo.sh			$bin/
 ln -sv $apps/HandBrakeCLI		$bin/
 ln -sv $apps/mvim			$bin/
