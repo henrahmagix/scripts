@@ -18,3 +18,4 @@ ln -sv $script/file_regex.sh		$bin/
 ln -sv $apps/todo.sh			$bin/
 ln -sv $apps/HandBrakeCLI		$bin/
 ln -sv $apps/mvim			$bin/
+ln -sv $script/git_rename.sh		$bin/git_rename
