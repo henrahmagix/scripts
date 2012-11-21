@@ -6,5 +6,5 @@ replace=$1
 shift
 for x in $@
 do
-    confirm "rename ${x} --> ${x/$pattern/$replace} ?" && g mv "${x}" "${x/$pattern/$replace}"
+    confirm "rename ${x} --> ${x/$pattern/$replace} ?" && git mv "${x}" "${x/$pattern/$replace}"
 done
