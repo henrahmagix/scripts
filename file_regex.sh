@@ -12,4 +12,6 @@ while getopts $opts option; do
     esac
 done
 shift $((OPTIND-1))
-ack -H --nocolor `echo $ALL` "$1" | cut -d":" -f1 | xargs -I file perl -p `echo $INPLACE` -e "s,$1,$2," "file"
+
+source confirm.sh
+confirm "Replace $1 with $2?" && ack -H --nocolor `echo $ALL` "$1" | cut -d":" -f1 | xargs -I file perl -p `echo $INPLACE` -e "s,$1,$2,g" "file"
