@@ -7,7 +7,7 @@ apps="$HOME/Apps"
 ln -sv $script/change_all_desktops.sh   $bin/changebackground
 ln -sv $script/change_dns.sh            $bin/changedns
 ln -sv $script/compare_md5.sh           $bin/compare-md5
-ln -sv $script/confirm.sh               $bin/confirm
+ln -sv $script/confirm.sh               $bin/
 ln -sv $script/file_regex.sh            $bin/file-regex
 ln -sv $script/git_single_branch.sh     $bin/git-single-branch
 ln -sv $script/git_delete_branches.sh   $bin/git-delete-branches
