@@ -1,5 +1,7 @@
 # ======================================================================
 #
+# @link http://wuhrr.wordpress.com/2010/01/13/adding-confirmation-to-bash
+#
 # Function: confirm
 # Asks the user to confirm an action, If the user does not answer yes,
 # then the script will immediately exit.
