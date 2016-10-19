@@ -1,7 +1,7 @@
 #!/bin/bash
 
 script="/usr/local/scripts"
-bin="/usr/local/bin"
+bin="~/bin"
 apps="$HOME/Apps"
 
 ln -sv $script/change_all_desktops.sh       $bin/changebackground
