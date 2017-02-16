@@ -14,4 +14,4 @@ done
 shift $((OPTIND-1))
 
 source confirm.sh
-confirm "Replace $1 with $2?" && ag -H --nocolor `echo $ALL` "$1" | cut -d":" -f1 | xargs -I file perl -p `echo $INPLACE` -e "s,$1,$2,g" "file"
+confirm "Replace $1 with $2?" && ag -l --no-color `echo $ALL` "$1" | xargs -I file perl -p `echo $INPLACE` -e "s,$1,$2,g" "file"
