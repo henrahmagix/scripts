@@ -15,7 +15,6 @@ ln -sv $script/git_rename.sh                $bin/git-rename
 ln -sv $script/git-diff-ignore-reorder.sh   $bin/git-diff-ignore-reorder
 ln -sv $script/handbrake_batch.sh           $bin/handbrake-batch
 ln -sv $script/is_symlink.sh                $bin/issymlink
-ln -sv $script/setup-edetail-project.sh     $bin/edetail-setup
 ln -sv $script/make_bootable.sh             $bin/make-bootable
 ln -sv $script/number_of_files.sh           $bin/numfiles
 ln -sv $script/debian_rename                $bin/rename
