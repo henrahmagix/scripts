@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [ -L "$BASH_SOURCE" ]; then
+    SCRIPTS_DIR=$(dirname $(readlink $BASH_SOURCE))
+else
+    SCRIPTS_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+fi
+
+echo "Todos for $TODO_AREA:"
+osascript $SCRIPTS_DIR/../get-todos.applescript $TODO_AREA

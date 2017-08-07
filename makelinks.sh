@@ -29,3 +29,5 @@ link $script/debian_rename                $bin/rename
 link $apps/todo.sh                        $bin/
 link $apps/HandBrakeCLI                   $bin/
 link $apps/mvim                           $bin/
+
+link $script/git-scripts/init-git-scripts $bin/init-git-scripts

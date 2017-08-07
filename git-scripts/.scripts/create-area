@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+if [ -L "$BASH_SOURCE" ]; then
+    SCRIPTS_DIR=$(dirname $(readlink $BASH_SOURCE))
+else
+    SCRIPTS_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+fi
+
+set -e
+echo -n "Area created: "
+osascript $SCRIPTS_DIR/../create-todos-area.applescript $TODO_AREA
