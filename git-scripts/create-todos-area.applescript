@@ -3,6 +3,7 @@ on run argv
 
     tell application "Things3"
         set newTag to make new tag with properties {name:tagName}
+        set parent tag of newTag to tag "Work"
         return name of newTag
     end tell
 
