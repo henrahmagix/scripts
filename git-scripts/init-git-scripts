@@ -1,32 +1,37 @@
 #!/usr/bin/env bash
 
-if [ -L "$BASH_SOURCE" ]; then
-    SCRIPTS_DIR=$(dirname $(readlink $BASH_SOURCE))
-else
-    SCRIPTS_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-fi
-
-if [ $# -gt 0 ]; then
-    tagname=$1
-else
-    tagname=$(basename $PWD)
-fi
-
-echo "Initialising git scripts for $tagname"
-
-if [ -d .git >/dev/null 2>&1 ]; then
-    mkdir .scripts
-    ln -sv $SCRIPTS_DIR/.scripts .scripts/todos
-    cp $SCRIPTS_DIR/dotenv-file .env
-    echo "export TODO_AREA=$tagname" >> .env
-    cd .
-    TODO_AREA=$tagname .scripts/todos/create-area
-    TODO_AREA=$tagname .scripts/todos/get-todos
-    echo "Run 'cd .' to start autoenv"
-else
-    if git rev-parse --git-dir > /dev/null 2>&1; then
-        echo "Must install at root of git repo"
+setup () {
+    if [ -L "$BASH_SOURCE" ]; then
+        SCRIPTS_DIR=$(dirname $(readlink $BASH_SOURCE))
     else
-        echo "Not a git repo"
+        SCRIPTS_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
     fi
-fi
+
+    if [ $# -gt 0 ]; then
+        tagname=$1
+    else
+        tagname=$(basename $PWD)
+    fi
+
+    echo "Initialising git scripts for $tagname"
+
+    if [ -d .git >/dev/null 2>&1 ]; then
+        mkdir .scripts
+        ln -sv $SCRIPTS_DIR/.scripts .scripts/todos
+        cp $SCRIPTS_DIR/dotenv-file .env
+        echo "export TODO_AREA=$tagname" >> .env
+        TODO_AREA=$tagname .scripts/todos/create-area
+        TODO_AREA=$tagname .scripts/todos/get-todos
+    else
+        if git rev-parse --git-dir > /dev/null 2>&1; then
+            echo "Must install at root of git repo"
+        else
+            echo "Not a git repo"
+        fi
+    fi
+}
+
+setup
+
+# Trigger autoenv
+cd .
