@@ -1,1 +1,3 @@
-PATH=".scripts:.scripts/todos:$PATH"
+if [[ $PATH != *".scripts"* ]]; then
+    PATH=".scripts:.scripts/todos:$PATH"
+fi
