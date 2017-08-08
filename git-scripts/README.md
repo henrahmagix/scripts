@@ -14,7 +14,7 @@ init-git-scripts my-tag-name
 
 ## Todo
 
-- [] Allow marking a todo as completed
+- [x] Allow marking a todo as completed
 
 ## Requirements
 
