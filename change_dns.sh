@@ -1,5 +1,5 @@
 # Include confirm.sh
-source /usr/local/bin/confirm.sh
+source confirm.sh
 
 [ $# -lt 2 ] && echo "Usage: $0 device dns1 dns2" && exit 1
 

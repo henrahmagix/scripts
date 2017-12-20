@@ -1,7 +1,10 @@
 #!/bin/bash
 
-script="/usr/local/scripts"
-bin="/usr/local/bin"
+# Get the pwd of this script.
+DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+script="$DIR"
+bin="$HOME/bin"
 apps="$HOME/Apps"
 
 link () {
