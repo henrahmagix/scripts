@@ -19,6 +19,7 @@ link $script/change_all_desktops.sh       $bin/changebackground
 link $script/change_dns.sh                $bin/changedns
 link $script/compare_md5.sh               $bin/compare-md5
 link $script/confirm.sh                   $bin/
+link $script/dep_from_symlinked.sh        $bin/dep_from_symlinked
 link $script/file_regex.sh                $bin/file-regex
 link $script/git_single_branch.sh         $bin/git-single-branch
 link $script/git_delete_branches.sh       $bin/git-delete-branches
