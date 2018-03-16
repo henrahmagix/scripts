@@ -29,6 +29,7 @@ link $script/handbrake_batch.sh           $bin/handbrake-batch
 link $script/is_symlink.sh                $bin/issymlink
 link $script/make_bootable.sh             $bin/make-bootable
 link $script/number_of_files.sh           $bin/numfiles
+link $script/newproject.sh                $bin/newproject
 link $script/debian_rename                $bin/rename
 link $apps/todo.sh                        $bin/
 link $apps/HandBrakeCLI                   $bin/
