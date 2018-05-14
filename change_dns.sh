@@ -7,12 +7,17 @@ device=$1
 dns1=$2
 dns2=$3
 
+[ $2 == "google" ] && echo "Using Google dns." && dns1=8.8.8.8 && dns2=8.8.4.4
 [ $2 == "open" ] && echo "Using opendns." && dns1=208.67.222.222 && dns2=208.67.220.220
 [ $2 == "us" ] && echo "Using USA dns." && dns1=173.199.144.68 && dns2=206.214.214.28
 [ $2 == "uk" ] && echo "Using UK dns." && dns1=194.168.8.100 && dns2=194.168.4.100
 
 echo "Current DNS servers for $device:"
-networksetup -getdnsservers $device
+networksetup -getdnsservers $device || exit 1
+
+echo "Overwrite with:"
+echo $dns1
+echo $dns2
 
 confirm "Overwrite DNS servers?" && \
 echo "Overwriting..." && \
