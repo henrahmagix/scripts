@@ -25,6 +25,7 @@ link $script/git_single_branch.sh         $bin/git-single-branch
 link $script/git_delete_branches.sh       $bin/git-delete-branches
 link $script/git_rename.sh                $bin/git-rename
 link $script/git-diff-ignore-reorder.sh   $bin/git-diff-ignore-reorder
+link $script/hub_override.sh              $bin/hub-override
 link $script/handbrake_batch.sh           $bin/handbrake-batch
 link $script/is_symlink.sh                $bin/issymlink
 link $script/make_bootable.sh             $bin/make-bootable
