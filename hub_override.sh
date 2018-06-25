@@ -6,5 +6,5 @@ if [ "$1" == "pr" ]; then
     # See https://github.com/github/hub/issues/1536
     hub pull-request
 else
-    hub $@
+    hub "$@"
 fi
