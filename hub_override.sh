@@ -4,7 +4,8 @@ if [ "$1" == "pr" ]; then
     # it's own command over a git alias. This is broken until the new `pr`
     # command gets a `create` command.
     # See https://github.com/github/hub/issues/1536
-    hub pull-request
+    shift
+    hub pull-request "$@"
 else
     hub "$@"
 fi
