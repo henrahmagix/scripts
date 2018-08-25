@@ -15,5 +15,37 @@ git init
 git add .
 git commit -m 'Initial commit'
 
-subl .
+cat > $dir.sublime-project << EOF
+{
+    "folders":
+    [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "translate_tabs_to_spaces": true
+    }
+}
+EOF
+
+if [ "$2" == "go" ]; then
+    cat > $dir.sublime-project << EOF
+{
+    "folders":
+    [
+        {
+            "path": "."
+        }
+    ],
+    "settings":
+    {
+        "filename_filter": "\\\\.(go)$",
+        "build_on_save": 1
+    }
+}
+EOF
+fi
+
+subl $dir.sublime-project
 subl README.md
