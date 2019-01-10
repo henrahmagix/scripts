@@ -13,5 +13,15 @@ while getopts $opts option; do
 done
 shift $((OPTIND-1))
 
+find="$1"
+shift
+replace="$1"
+shift
+
+confirm_msg="Replace $find with $replace?"
+if [[ -n "$@" ]]; then
+    confirm_msg="Replace '$find' with '$replace' in $@?"
+fi
+
 source confirm.sh
-confirm "Replace $1 with $2?" && ag -l --no-color `echo $ALL` "$1" | xargs -I file perl -p `echo $INPLACE` -e "s,$1,$2,g" "file"
+confirm $confirm_msg && ag -l --no-color `echo $ALL` "$find" "$@" | xargs -I file perl -p `echo $INPLACE` -e "s,$find,$replace,g" "file"
