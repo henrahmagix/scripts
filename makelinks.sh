@@ -22,6 +22,7 @@ link $script/confirm.sh                   $bin/
 link $script/dep_from_symlinked.sh        $bin/dep_from_symlinked
 link $script/file_regex.sh                $bin/file-regex
 link $script/git_single_branch.sh         $bin/git-single-branch
+link $script/gcloud_show_build_failure.sh $bin/build-failure
 link $script/git_delete_branches.sh       $bin/git-delete-branches
 link $script/git_rename.sh                $bin/git-rename
 link $script/git-diff-ignore-reorder.sh   $bin/git-diff-ignore-reorder
