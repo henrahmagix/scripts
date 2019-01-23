@@ -17,6 +17,13 @@ LOGS_DIR="$HOME/.gcloud/logs"
 LOG_FILE="$LOGS_DIR/$id"
 FAILURE_FILE="$LOGS_DIR/$id-failure"
 
+if [ "$id" == "clean" ]; then
+  errcho "Cleaning old logs..."
+  rm -r $LOGS_DIR
+  mkdir -p $LOGS_DIR
+  exit
+fi
+
 if [ -f "$FAILURE_FILE" ]; then
   less $FAILURE_FILE
   exit 0
@@ -27,7 +34,7 @@ rm -r $LOGS_DIR
 mkdir -p $LOGS_DIR
 
 errcho 'Downloading build...'
-step_id=$(gcloud builds describe "$id" --format=json | node -e "var data = ''; process.openStdin().on('data', function(chunk) { data += chunk }).on('end', function() { console.log(JSON.parse(data).steps.find(s=>s.status==='FAILURE').id); });")
+step_id=$(gcloud builds describe "$id" --format=json | node -e "var data = ''; process.openStdin().on('data', function(chunk) { data += chunk }).on('end', function() { var steps = JSON.parse(data).steps; var step = steps.find(s=>s.status==='FAILURE'); console.log(step.id || 'Step #' + steps.indexOf(step)); });")
 errcho "Failed step: $step_id"
 
 errcho 'Downloading logs...'
