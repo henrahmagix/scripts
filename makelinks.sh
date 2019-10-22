@@ -33,6 +33,7 @@ link $script/make_bootable.sh             $bin/make-bootable
 link $script/number_of_files.sh           $bin/numfiles
 link $script/newproject.sh                $bin/newproject
 link $script/debian_rename                $bin/rename
+link $script/retrotxt-image-clipboard.sh  $bin/retro
 link $apps/todo.sh                        $bin/
 link $apps/HandBrakeCLI                   $bin/
 link $apps/mvim                           $bin/
