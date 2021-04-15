@@ -39,3 +39,5 @@ link $apps/HandBrakeCLI                   $bin/
 link $apps/mvim                           $bin/
 
 link $script/git-scripts/init-git-scripts $bin/init-git-scripts
+
+link $script/list_open_ports.sh $bin/list_open_ports
