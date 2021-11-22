@@ -24,4 +24,4 @@ if [[ -n "$@" ]]; then
 fi
 
 source confirm.sh
-confirm $confirm_msg && ag -l --no-color `echo $ALL` "$find" "$@" | xargs -I file perl -p `echo $INPLACE` -e "s,$find,$replace,g" "file"
+confirm $confirm_msg && ag -l --no-color `echo $ALL` "$find" "$@" | xargs -I file perl -0777 -p `echo $INPLACE` -e "s,$find,$replace,sg" "file"
