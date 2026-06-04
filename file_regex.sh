@@ -1,13 +1,18 @@
+#!/usr/bin/env bash
 ALL=""
-INPLACE="-i"
-opts="at-"
+IN_PLACE="-i"
+CONFIRMED=""
+opts="aty-"
 while getopts $opts option; do
     case $option in
         a)
             ALL="-a"
             ;;
         t)
-            INPLACE=""
+            IN_PLACE=""
+            ;;
+        y)
+            CONFIRMED="1"
             ;;
     esac
 done
@@ -19,9 +24,9 @@ replace="$1"
 shift
 
 confirm_msg="Replace $find with $replace?"
-if [[ -n "$@" ]]; then
-    confirm_msg="Replace '$find' with '$replace' in $@?"
+if [[ -n "$*" ]]; then
+    confirm_msg="Replace \"$find\" with \"$replace\" in $*?"
 fi
 
 source confirm.sh
-confirm $confirm_msg && ag -l --no-color `echo $ALL` "$find" "$@" | xargs -I file perl -0777 -p `echo $INPLACE` -e "s,$find,$replace,sg" "file"
+([[ $CONFIRMED == "1" ]] || confirm "$confirm_msg") && ag -l --no-color $ALL "$find" -- "$@" | xargs -I file perl -0777 -p $IN_PLACE -e "s,$find,$replace,sg" "file"
