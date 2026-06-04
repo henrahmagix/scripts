@@ -29,4 +29,4 @@ if [[ -n "$*" ]]; then
 fi
 
 source confirm.sh
-([[ $CONFIRMED == "1" ]] || confirm "$confirm_msg") && ag -l --no-color $ALL "$find" -- "$@" | xargs -I file perl -0777 -p $IN_PLACE -e "s,$find,$replace,sg" "file"
+([[ $CONFIRMED == "1" ]] || confirm "$confirm_msg") && ag -l --no-color $ALL "$find" -- "$@" | xargs perl -p $IN_PLACE -e "s,$find,$replace,sg"
